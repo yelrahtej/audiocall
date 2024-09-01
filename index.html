@@ -12,7 +12,10 @@
         // Install socket.io-client or directly use cdn
 
 
-        let socket = io("wss://0.tcp.ap.ngrok.io:17759");
+        let socket = io("https://ade3-139-135-192-215.ngrok-free.app", {
+            transports: ['websocket'],
+            upgrade: false
+        });
 
         socket.on('connect', () => {
             navigator.mediaDevices.getUserMedia({ audio: true, video: false })
